@@ -1,7 +1,15 @@
 $(document).ready(function() {
     // Variables
-    var humanPlayer;
-    var computerPlayer;
+    var humanPlayer = {
+      XorO: 'X',
+      turn: 1
+    };
+
+    var computerPlayer = {
+      XorO: 'O',
+      turn: 2
+    };
+
     var gameBoard = [ null, null, null, null, null, null, null, null, null ];
 
     // Functions
@@ -15,12 +23,14 @@ $(document).ready(function() {
       });
     }
     // computerChooses() chooses what computer
-    // function computerChooses() {
+    function computerChooses() {
 
-    // }
+    }
 
 
     // Game Control
     // Start game by assigning values to human player
-    writeToBoard("O");
+    // Assign humanPlayer and computerPlayer
+
+
 });
