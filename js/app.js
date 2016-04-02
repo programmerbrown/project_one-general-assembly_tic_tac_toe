@@ -5,14 +5,14 @@ $(document).ready(function() {
 
     // This object represents the human player
     var humanPlayer = {
-      mark: 'X',
-      turn: 1
+      mark: null,
+      turn: null
     };
 
     // This object represents the computer player
     var computerPlayer = {
-      mark: 'O',
-      turn: 2
+      mark: null,
+      turn: null
     };
 
     // Defined various parameters needed to monitor the flow of the game
@@ -53,7 +53,14 @@ $(document).ready(function() {
     }
 
     function setUpPlayers() {
+      var humanMark = prompt("Enter either X or O to choose which mark you want.");
+      var humanTurn = prompt("Enter either 1 to go first or a 2 to go second.");
 
+      humanPlayer["mark"] = humanMark.toUpperCase();
+      humanMark === 'X' ? computerPlayer["mark"] = 'O' : computerPlayer["mark"] = 'X';
+
+      humanPlayer["turn"] = parseInt(humanTurn);
+      parseInt(humanTurn) === 1 ? computerPlayer["turn"] = 2 : computerPlayer["turn"] = 1;
     }
 
     // This function will check to see if anyone has won the game.
@@ -149,5 +156,8 @@ $(document).ready(function() {
     // computerPlaysMove();
     // var testGameBoard = [null, 'O', null, null, 'O', null, null, 'O', null ];
     // console.log(checkForWinner(testGameBoard));
-    // console.log(winningMark);
+    // // console.log(winningMark);
+    // setUpPlayers();
+    // console.log("Human player has " + humanPlayer["mark"] + " mark and turn " + humanPlayer["turn"]);
+    // console.log("Computer player has " + computerPlayer["mark"] + " mark and turn " + computerPlayer["turn"]);
 });
