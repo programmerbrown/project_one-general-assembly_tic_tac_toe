@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Variables
+    // VARIABLES
 
     // Total games played
 
@@ -20,12 +20,13 @@ $(document).ready(function() {
     // winningMark identifies the mark (X or O) that won the game (if there is a winner)
     // thereIsAWinner is set to true if a winner exists
     // gameBoard keeps track of which marks were put on the board so far
-    var moveCounter = 0;
+    var moveCounter = 1;
     var winningMark = null;
     var thereIsAWinner = false;
     var gameBoard = [ null, null, null, null, null, null, null, null, null ];
 
-    // Functions
+
+    // FUNCTIONS
     // humanPlaysMove writes either an 'X' or 'O' to the board.
     // wrtiteToSquare also writes values to an gameBoard array based on
     // whether an 'X' or 'O' is played.
@@ -61,6 +62,11 @@ $(document).ready(function() {
 
       humanPlayer["turn"] = parseInt(humanTurn);
       parseInt(humanTurn) === 1 ? computerPlayer["turn"] = 2 : computerPlayer["turn"] = 1;
+    }
+
+    // checkTurn function checks to see whether it is computer or human's turn to play
+    function checkTurn() {
+
     }
 
     // This function will check to see if anyone has won the game.
@@ -115,12 +121,11 @@ $(document).ready(function() {
       // * Also ask the person playing the game to choose whether they want to be X's or O's
       // * Assign these values to the humanPlayer and computerPlayer objects
       // * function setUpPlayers() handles all of this
-
+      setUpPlayers();
 
 
       // moveCounter will be used to keep track of the total number of plays that have happened.
-
-      while(moveCounter < 9) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
+      while(moveCounter < 10) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
         // Determine which player should go next
         // * Do something
         // * Do something else
