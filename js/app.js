@@ -1,12 +1,12 @@
 $(document).ready(function() {
     // Variables
     var humanPlayer = {
-      XorO: 'X',
+      mark: 'X',
       turn: 1
     };
 
     var computerPlayer = {
-      XorO: 'O',
+      mark: 'O',
       turn: 2
     };
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     // Game Control
     // Start game by assigning values to human player
-    // Assign humanPlayer and computerPlayer
+    // Initially assign
 
 
 });
