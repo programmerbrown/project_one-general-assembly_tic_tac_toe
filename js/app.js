@@ -33,7 +33,6 @@ $(document).ready(function() {
       $('div').one('click', function() {
         $(this).text(parm);
         gameBoard[this.id] = parm;
-        moveCounter += 1;
         console.log('Game counter is now at ' + moveCounter);
       });
     }
@@ -46,7 +45,6 @@ $(document).ready(function() {
         compChoice = Math.floor(Math.random() * 10);
         if(gameBoard[compChoice] === null) {
           $('#' + compChoice).html(computerPlayer["mark"]);
-          moveCounter += 1;
           gameBoard[compChoice] = computerPlayer["mark"];
           completed = true;
         }
@@ -132,9 +130,7 @@ $(document).ready(function() {
         // Check to see if anyone has won the game
         // * If someone has won then break out of the while loop
 
-        // moveCounter is incremented
-
-
+        moveCounter += 1;// moveCounter is incremented
       }
 
       // Announce a winner for the game if one exists
