@@ -37,8 +37,8 @@ $(document).ready(function() {
       });
     }
 
-    // computerChooses() chooses what position the computer will play
-    function computerChooses() {
+    // computerPlaysMove() chooses what position the computer will play
+    function computerPlaysMove() {
       var completed = false;
       var compChoice = null;
       while(!completed) {
@@ -146,7 +146,7 @@ $(document).ready(function() {
     // Initially assign
 
     // humanPlaysMove(humanPlayer["mark"]);
-    // computerChooses();
+    // computerPlaysMove();
     // var testGameBoard = [null, 'O', null, null, 'O', null, null, 'O', null ];
     // console.log(checkForWinner(testGameBoard));
     // console.log(winningMark);
