@@ -26,10 +26,10 @@ $(document).ready(function() {
     var gameBoard = [ null, null, null, null, null, null, null, null, null ];
 
     // Functions
-    // writeToSquare writes either an 'X' or 'O' to the board.
+    // humanPlaysMove writes either an 'X' or 'O' to the board.
     // wrtiteToSquare also writes values to an gameBoard array based on
     // whether an 'X' or 'O' is played.
-    function writeToBoard(parm) {
+    function humanPlaysMove(parm) {
       $('div').one('click', function() {
         $(this).text(parm);
         gameBoard[this.id] = parm;
@@ -145,7 +145,7 @@ $(document).ready(function() {
     // Start game by assigning values to human player
     // Initially assign
 
-    // writeToBoard(humanPlayer["mark"]);
+    // humanPlaysMove(humanPlayer["mark"]);
     // computerChooses();
     // var testGameBoard = [null, 'O', null, null, 'O', null, null, 'O', null ];
     // console.log(checkForWinner(testGameBoard));
