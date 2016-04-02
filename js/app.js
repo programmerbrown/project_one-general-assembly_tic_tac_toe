@@ -15,6 +15,11 @@ $(document).ready(function() {
       turn: 2
     };
 
+    // Defined various parameters needed to monitor the flow of the game
+    // moveCounter keeps track of the number of moves that have happened
+    // winningMark identifies the mark (X or O) that won the game (if there is a winner)
+    // thereIsAWinner is set to true if a winner exists
+    // gameBoard keeps track of which marks were put on the board so far
     var moveCounter = 0;
     var winningMark = null;
     var thereIsAWinner = false;
@@ -49,33 +54,7 @@ $(document).ready(function() {
 
     }
 
-    // The playGame() function will actually execute the process of playing the game.
-    function playGame() {
-      // Assign each player object - humanPlayer and computerPlayer - a mark or turn
-      // * Ask the person playing the game to choose whether they want to go 1st or 2nd
-      // * Also ask the person playing the game to choose whether they want to be X's or O's
-      // * Assign these values to the humanPlayer and computerPlayer objects
-
-
-
-      // moveCounter will be used to keep track of the total number of plays that have happened.
-      while(moveCounter < 9) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
-        // Determine which player should go next
-        // * Do something
-        // * Do something else
-        // * Do this last thing
-
-        // Player takes a turn
-        // * If one player
-
-        // Check to see if anyone has won the game
-        // * If someone has won then break out of the while loop
-
-        // moveCounter is incremented
-
-
-      }
-
+    function setUpPlayers() {
 
     }
 
@@ -117,6 +96,52 @@ $(document).ready(function() {
           return thereIsAWinner;
       }
     }
+
+    // Announce winner for the game if one exists
+    // If now winner exists then simply announce a draw/tie
+    function announceWinner () {
+
+    }
+
+    // The playGame() function will actually execute the process of playing the game.
+    function playGame() {
+      // Assign each player object - humanPlayer and computerPlayer - a mark or turn
+      // * Ask the person playing the game to choose whether they want to go 1st or 2nd
+      // * Also ask the person playing the game to choose whether they want to be X's or O's
+      // * Assign these values to the humanPlayer and computerPlayer objects
+      // * function setUpPlayers() handles all of this
+
+
+
+      // moveCounter will be used to keep track of the total number of plays that have happened.
+
+      while(moveCounter < 9) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
+        // Determine which player should go next
+        // * Do something
+        // * Do something else
+        // * Do this last thing
+
+        // Player takes a turn
+        // * If human player:
+        //  - allow the player to click the board to register a turn
+        //  - stop the player from overriding a previous turn
+        //  - turn off the eventlisteners to stop the human player from continuing to play.
+        // * If computer player:
+        //  - make sure the computer player doesn't over write a previous entry
+
+        // Check to see if anyone has won the game
+        // * If someone has won then break out of the while loop
+
+        // moveCounter is incremented
+
+
+      }
+
+      // Announce a winner for the game if one exists
+      // If no winner exists, then announce a draw/tie
+
+    }
+
 
 
 
