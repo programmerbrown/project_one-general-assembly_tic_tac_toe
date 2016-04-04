@@ -66,7 +66,10 @@ $(document).ready(function() {
 
     // checkTurn function checks to see whether it is computer or human's turn to play
     function checkTurn() {
-
+      // When moveCounter is odd then ...
+      // ... then the player with turn 1 should go
+      // When moveCounter is even then ...
+      // ... then the player with turn 2 should go
     }
 
     // This function will check to see if anyone has won the game.
@@ -127,9 +130,17 @@ $(document).ready(function() {
       // moveCounter will be used to keep track of the total number of plays that have happened.
       while(moveCounter < 10) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
         // Determine which player should go next
-        // * Do something
+        // * moveCounter
         // * Do something else
         // * Do this last thing
+
+        if(moveCounter % 2 === 0) {
+          // humanPlayer["turn"] === 2 ? humanPlaysMove() : computerPlaysMove();
+          humanPlayer["turn"] === 2 ? console.log("Human plays move.") : console.log("Computer plays move.");
+        } else {
+          // humanPlayer["turn"] === 1 ? humanPlaysMove() : computerPlaysMove();
+          humanPlayer["turn"] === 1 ? console.log("Human plays move.") : console.log("Computer plays move.");
+        }
 
         // Player takes a turn
         // * If human player:
@@ -165,4 +176,5 @@ $(document).ready(function() {
     // setUpPlayers();
     // console.log("Human player has " + humanPlayer["mark"] + " mark and turn " + humanPlayer["turn"]);
     // console.log("Computer player has " + computerPlayer["mark"] + " mark and turn " + computerPlayer["turn"]);
+    playGame();
 });
