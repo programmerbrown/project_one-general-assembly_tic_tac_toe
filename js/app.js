@@ -64,8 +64,6 @@ $(document).ready(function() {
       parseInt(humanTurn) === 1 ? computerPlayer["turn"] = 2 : computerPlayer["turn"] = 1;
     }
 
-    // checkTurn function checks to see whether it is computer or human's turn to play
-
     // This function will check to see if anyone has won the game.
     function checkForWinner(board) {
     // Board to cover the scenario of a game winner
@@ -108,7 +106,15 @@ $(document).ready(function() {
     // Announce winner for the game if one exists
     // If now winner exists then simply announce a draw/tie
     function announceWinner () {
-
+      if(thereIsAWinner) {
+        if(winningMark === 'X') {
+          humanPlayer["mark"] === 'X' ? console.log("Human won this game!") : console.log("Computer won this game!");
+        } else {
+          humanPlayer["mark"] === 'O' ? console.log("Human won this game!") : console.log("Computer won this game!");
+        }
+      } else {
+        console.log("There was no winner. It's a DRAW!");
+      }
     }
 
     // The playGame() function will actually execute the process of playing the game.
@@ -122,18 +128,16 @@ $(document).ready(function() {
 
 
       // moveCounter will be used to keep track of the total number of plays that have happened.
-      while(moveCounter < 10) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
+      while((moveCounter < 10) && (thereIsAWinner === false)) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
         // Determine which player should go next
-        // * moveCounter
-        // * Do something else
-        // * Do this last thing
+        //
 
         if(moveCounter % 2 === 0) {
-          // humanPlayer["turn"] === 2 ? humanPlaysMove() : computerPlaysMove();
-          humanPlayer["turn"] === 2 ? console.log("Human plays move.") : console.log("Computer plays move.");
+          humanPlayer["turn"] === 2 ? humanPlaysMove() : computerPlaysMove();
+          // humanPlayer["turn"] === 2 ? console.log("Human plays move.") : console.log("Computer plays move.");
         } else {
-          // humanPlayer["turn"] === 1 ? humanPlaysMove() : computerPlaysMove();
-          humanPlayer["turn"] === 1 ? console.log("Human plays move.") : console.log("Computer plays move.");
+          humanPlayer["turn"] === 1 ? humanPlaysMove() : computerPlaysMove();
+          // humanPlayer["turn"] === 1 ? console.log("Human plays move.") : console.log("Computer plays move.");
         }
 
         // Player takes a turn
@@ -145,7 +149,8 @@ $(document).ready(function() {
         //  - make sure the computer player doesn't over write a previous entry
 
         // Check to see if anyone has won the game
-        // * If someone has won then break out of the while loop
+        // * If someone has won then break out of the while loop by setting thereIsAWinner to true
+        checkForWinner(gameBoard);
 
         moveCounter += 1;// moveCounter is incremented
       }
