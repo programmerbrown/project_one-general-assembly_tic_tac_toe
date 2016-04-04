@@ -65,12 +65,6 @@ $(document).ready(function() {
     }
 
     // checkTurn function checks to see whether it is computer or human's turn to play
-    function checkTurn() {
-      // When moveCounter is odd then ...
-      // ... then the player with turn 1 should go
-      // When moveCounter is even then ...
-      // ... then the player with turn 2 should go
-    }
 
     // This function will check to see if anyone has won the game.
     function checkForWinner(board) {
