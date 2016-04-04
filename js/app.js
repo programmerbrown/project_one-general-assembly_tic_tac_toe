@@ -121,30 +121,12 @@ $(document).ready(function() {
       }
     }
 
-    function playRound(){
-
-    }
-
-    function incrementCounter() {
-
-    }
-
-    // The playGame() function will actually execute the process of playing the game.
-    function playGame() {
-      // Assign each player object - humanPlayer and computerPlayer - a mark or turn
-      // * Ask the person playing the game to choose whether they want to go 1st or 2nd
-      // * Also ask the person playing the game to choose whether they want to be X's or O's
-      // * Assign these values to the humanPlayer and computerPlayer objects
-      // * function setupPlayers() handles all of this
-      setupPlayers();
-
-
-      // moveCounter will be used to keep track of the total number of plays that have happened.
-      while((moveCounter < 10) && (thereIsAWinner === false)) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
+    function playRound(cnt, winCondition){
+      while((cnt < 10) && (winCondition === false)) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
         // Determine which player should go next
         //
 
-        if(moveCounter % 2 === 0) {
+        if(cnt % 2 === 0) {
           humanPlayer["turn"] === 2 ? humanPlaysMove(humanPlayer["mark"]) : computerPlaysMove();
           humanPlayer["turn"] === 2 ? console.log("Human plays move.") : console.log("Computer plays move.");
         } else {
@@ -166,6 +148,50 @@ $(document).ready(function() {
 
         moveCounter += 1;// moveCounter is incremented
       }
+    }
+
+    function incrementCounter() {
+
+    }
+
+    // The playGame() function will actually execute the process of playing the game.
+    function playGame() {
+      // Assign each player object - humanPlayer and computerPlayer - a mark or turn
+      // * Ask the person playing the game to choose whether they want to go 1st or 2nd
+      // * Also ask the person playing the game to choose whether they want to be X's or O's
+      // * Assign these values to the humanPlayer and computerPlayer objects
+      // * function setupPlayers() handles all of this
+      setupPlayers();
+
+
+      // moveCounter will be used to keep track of the total number of plays that have happened.
+
+      // while((moveCounter < 10) && (thereIsAWinner === false)) {      // Keep looping until the moveCounter, or the total number of moves reaches 9
+      //   // Determine which player should go next
+      //   //
+
+      //   if(moveCounter % 2 === 0) {
+      //     humanPlayer["turn"] === 2 ? humanPlaysMove(humanPlayer["mark"]) : computerPlaysMove();
+      //     humanPlayer["turn"] === 2 ? console.log("Human plays move.") : console.log("Computer plays move.");
+      //   } else {
+      //     humanPlayer["turn"] === 1 ? humanPlaysMove(humanPlayer["mark"]) : computerPlaysMove();
+      //     humanPlayer["turn"] === 1 ? console.log("Human plays move.") : console.log("Computer plays move.");
+      //   }
+
+      //   // Player takes a turn
+      //   // * If human player:
+      //   //  - allow the player to click the board to register a turn
+      //   //  - stop the player from overriding a previous turn
+      //   //  - turn off the eventlisteners to stop the human player from continuing to play.
+      //   // * If computer player:
+      //   //  - make sure the computer player doesn't over write a previous entry
+
+      //   // Check to see if anyone has won the game
+      //   // * If someone has won then break out of the while loop by setting thereIsAWinner to true
+      //   checkForWinner(gameBoard);
+
+      //   moveCounter += 1;// moveCounter is incremented
+      // }
 
       // Announce a winner for the game if one exists
       // If no winner exists, then announce a draw/tie
