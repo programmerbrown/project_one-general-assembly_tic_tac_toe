@@ -27,10 +27,25 @@ $(document).ready(function() {
 
 
     // FUNCTIONS
+    // setupPlayers() setups up the player objects humanPlayer and computerPlayer
+    function setupPlayers() {
+      var humanMark = prompt("Enter either X or O to choose which mark you want.");
+      var humanTurn = prompt("Enter either 1 to go first or a 2 to go second.");
+
+      humanPlayer["mark"] = humanMark.toUpperCase();
+      humanMark === 'X' ? computerPlayer["mark"] = 'O' : computerPlayer["mark"] = 'X';
+
+      humanPlayer["turn"] = parseInt(humanTurn);
+      parseInt(humanTurn) === 1 ? computerPlayer["turn"] = 2 : computerPlayer["turn"] = 1;
+    }
+
+
     // humanPlaysMove writes either an 'X' or 'O' to the board.
     // wrtiteToSquare also writes values to an gameBoard array based on
     // whether an 'X' or 'O' is played.
     function humanPlaysMove(parm) {
+      // We need to create a pause in how the game flows to allow the human player to
+      // choose a square.
       $('div').one('click', function() {
         $(this).text(parm);
         gameBoard[this.id] = parm;
@@ -50,20 +65,9 @@ $(document).ready(function() {
           completed = true;
         }
       }
-
     }
 
-    function setUpPlayers() {
-      var humanMark = prompt("Enter either X or O to choose which mark you want.");
-      var humanTurn = prompt("Enter either 1 to go first or a 2 to go second.");
-
-      humanPlayer["mark"] = humanMark.toUpperCase();
-      humanMark === 'X' ? computerPlayer["mark"] = 'O' : computerPlayer["mark"] = 'X';
-
-      humanPlayer["turn"] = parseInt(humanTurn);
-      parseInt(humanTurn) === 1 ? computerPlayer["turn"] = 2 : computerPlayer["turn"] = 1;
-    }
-
+    // function playGame() {}
     // This function will check to see if anyone has won the game.
     function checkForWinner(board) {
     // Board to cover the scenario of a game winner
@@ -117,14 +121,22 @@ $(document).ready(function() {
       }
     }
 
+    function playRound(){
+
+    }
+
+    function incrementCounter() {
+
+    }
+
     // The playGame() function will actually execute the process of playing the game.
     function playGame() {
       // Assign each player object - humanPlayer and computerPlayer - a mark or turn
       // * Ask the person playing the game to choose whether they want to go 1st or 2nd
       // * Also ask the person playing the game to choose whether they want to be X's or O's
       // * Assign these values to the humanPlayer and computerPlayer objects
-      // * function setUpPlayers() handles all of this
-      setUpPlayers();
+      // * function setupPlayers() handles all of this
+      setupPlayers();
 
 
       // moveCounter will be used to keep track of the total number of plays that have happened.
@@ -160,9 +172,6 @@ $(document).ready(function() {
       announceWinner();
     }
 
-
-
-
     // Game Control
     // Start game by assigning values to human player
     // Initially assign
@@ -172,7 +181,7 @@ $(document).ready(function() {
     // var testGameBoard = [null, 'O', null, null, 'O', null, null, 'O', null ];
     // console.log(checkForWinner(testGameBoard));
     // // console.log(winningMark);
-    // setUpPlayers();
+    // setupPlayers();
     // console.log("Human player has " + humanPlayer["mark"] + " mark and turn " + humanPlayer["turn"]);
     // console.log("Computer player has " + computerPlayer["mark"] + " mark and turn " + computerPlayer["turn"]);
     playGame();
