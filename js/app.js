@@ -105,7 +105,7 @@ $(document).ready(function() {
 
     // Announce winner for the game if one exists
     // If now winner exists then simply announce a draw/tie
-    function announceWinner () {
+    function announceWinner() {
       if(thereIsAWinner) {
         if(winningMark === 'X') {
           humanPlayer["mark"] === 'X' ? console.log("Human won this game!") : console.log("Computer won this game!");
@@ -133,11 +133,11 @@ $(document).ready(function() {
         //
 
         if(moveCounter % 2 === 0) {
-          humanPlayer["turn"] === 2 ? humanPlaysMove() : computerPlaysMove();
-          // humanPlayer["turn"] === 2 ? console.log("Human plays move.") : console.log("Computer plays move.");
+          humanPlayer["turn"] === 2 ? humanPlaysMove(humanPlayer["mark"]) : computerPlaysMove();
+          humanPlayer["turn"] === 2 ? console.log("Human plays move.") : console.log("Computer plays move.");
         } else {
-          humanPlayer["turn"] === 1 ? humanPlaysMove() : computerPlaysMove();
-          // humanPlayer["turn"] === 1 ? console.log("Human plays move.") : console.log("Computer plays move.");
+          humanPlayer["turn"] === 1 ? humanPlaysMove(humanPlayer["mark"]) : computerPlaysMove();
+          humanPlayer["turn"] === 1 ? console.log("Human plays move.") : console.log("Computer plays move.");
         }
 
         // Player takes a turn
@@ -157,7 +157,7 @@ $(document).ready(function() {
 
       // Announce a winner for the game if one exists
       // If no winner exists, then announce a draw/tie
-
+      announceWinner();
     }
 
 
