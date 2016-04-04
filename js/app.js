@@ -74,35 +74,35 @@ $(document).ready(function() {
     function checkForWinner(callback) {
     // gameBoard to cover the scenario of a game winner
     // Using a switch statement to cover win scenarios for rows
-      if( gameBoard[0] == gameBoard[1]) &&  gameBoard[0] == gameBoard[2]) &&  gameBoard[0] !== null)) {            // Check top row
+      if((gameBoard[0] == gameBoard[1]) &&  (gameBoard[0] == gameBoard[2]) &&  (gameBoard[0] !== null)) {            // Check top row
           thereIsAWinner = true;
           winningMark = gameBoard[0];
           return thereIsAWinner;
-      } else if( gameBoard[3] == gameBoard[4]) &&  gameBoard[3] == gameBoard[5]) &&  gameBoard[3] !== null)) {     // Check middle row
+      } else if((gameBoard[3] == gameBoard[4]) &&  (gameBoard[3] == gameBoard[5]) &&  (gameBoard[3] !== null)) {     // Check middle row
           thereIsAWinner = true;
           winningMark = gameBoard[3];
           return thereIsAWinner;
-      } else if( gameBoard[6] == gameBoard[7]) &&  gameBoard[6] == gameBoard[8]) &&  gameBoard[6] !== null)) {     // Check bottom row
+      } else if((gameBoard[6] == gameBoard[7]) &&  (gameBoard[6] == gameBoard[8]) &&  (gameBoard[6] !== null)) {     // Check bottom row
           thereIsAWinner = true;
           winningMark = gameBoard[6];
           return thereIsAWinner;
-      } else if( gameBoard[0] == gameBoard[3]) &&  gameBoard[0] == gameBoard[6]) &&  gameBoard[0] !== null)) {     // Check left column
+      } else if((gameBoard[0] == gameBoard[3]) &&  (gameBoard[0] == gameBoard[6]) &&  (gameBoard[0] !== null)) {     // Check left column
           thereIsAWinner = true;
           winningMark = gameBoard[0];
           return thereIsAWinner;
-      } else if( gameBoard[1] == gameBoard[4]) &&  gameBoard[1] == gameBoard[7]) &&  gameBoard[1] !== null)) {     // Check middle column
+      } else if((gameBoard[1] == gameBoard[4]) &&  (gameBoard[1] == gameBoard[7]) &&  (gameBoard[1] !== null)) {     // Check middle column
           thereIsAWinner = true;
           winningMark = gameBoard[1];
           return thereIsAWinner;
-      } else if( gameBoard[2] == gameBoard[5]) &&  gameBoard[2] == gameBoard[8]) &&  gameBoard[2] !== null)) {     // Check right column
+      } else if((gameBoard[2] == gameBoard[5]) &&  (gameBoard[2] == gameBoard[8]) &&  (gameBoard[2] !== null)) {     // Check right column
           thereIsAWinner = true;
           winningMark = gameBoard[2];
           return thereIsAWinner;
-      } else if( gameBoard[0] == gameBoard[4]) &&  gameBoard[0] == gameBoard[8]) &&  gameBoard[0] !== null)) {     // Check the first diagonal
+      } else if((gameBoard[0] == gameBoard[4]) &&  (gameBoard[0] == gameBoard[8]) &&  (gameBoard[0] !== null)) {     // Check the first diagonal
           thereIsAWinner = true;
           winningMark = gameBoard[0];
           return thereIsAWinner;
-      } else if( gameBoard[2] == gameBoard[4]) &&  gameBoard[2] == gameBoard[6]) &&  gameBoard[2] !== null)) {     // Check the second diagonal
+      } else if((gameBoard[2] == gameBoard[4]) &&  (gameBoard[2] == gameBoard[6]) &&  (gameBoard[2] !== null)) {     // Check the second diagonal
           thereIsAWinner = true;
           winningMark = gameBoard[2];
           return thereIsAWinner;
@@ -130,26 +130,13 @@ $(document).ready(function() {
         //
 
         if(cnt % 2 === 0) {
-          humanPlayer["turn"] === 2 ? humanPlaysMove(humanPlayer["mark"], callback()) : computerPlaysMove(callback());
+          humanPlayer["turn"] === 2 ? humanPlaysMove(callback) : computerPlaysMove(callback);
           humanPlayer["turn"] === 2 ? console.log("Human plays move.") : console.log("Computer plays move.");
         } else {
           humanPlayer["turn"] === 1 ? humanPlaysMove(humanPlayer["mark"], callback()) : computerPlaysMove(callback());
           humanPlayer["turn"] === 1 ? console.log("Human plays move.") : console.log("Computer plays move.");
         }
 
-        // Player takes a turn
-        // * If human player:
-        //  - allow the player to click the board to register a turn
-        //  - stop the player from overriding a previous turn
-        //  - turn off the eventlisteners to stop the human player from continuing to play.
-        // * If computer player:
-        //  - make sure the computer player doesn't over write a previous entry
-
-        // Check to see if anyone has won the game
-        // * If someone has won then break out of the while loop by setting thereIsAWinner to true
-        // checkForWinner(gameBoard);
-
-        // moveCounter += 1;// moveCounter is incremented
       }
     }
 
@@ -166,6 +153,8 @@ $(document).ready(function() {
       // * Assign these values to the humanPlayer and computerPlayer objects
       // * function setupPlayers() handles all of this
       setupPlayers();
+
+      PlayRound(moveCounter, thereIsAWinner, checkForWinner);
 
 
       // moveCounter will be used to keep track of the total number of plays that have happened.
