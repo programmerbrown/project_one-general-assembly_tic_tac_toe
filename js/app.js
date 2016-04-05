@@ -91,7 +91,7 @@ $(document).ready(function() {
     function resetGame() {
       $('button').on('click', function() {
           $('div').off('click');
-          $('div').html('');
+          $('div#0, div#1, div#2, div#3, div#4, div#5, div#6, div#7, div#8').html('');
           moveCounter = 0;
           winningMark = null;
           currentMark = 'X';
@@ -100,6 +100,6 @@ $(document).ready(function() {
       });
     }
 
-  playGame();
-  resetGame();
+  // playGame();
+  // resetGame();
 });

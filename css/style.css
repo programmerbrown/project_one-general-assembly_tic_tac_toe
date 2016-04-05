@@ -2,8 +2,8 @@ body {
   margin: auto;
   width: 600px
   height: 600px;
-  border-style: dotted;
-  border-color: green;
+  /*border-style: solid;*/
+  /*border-color: green;*/
 }
 
 h1 {
@@ -11,12 +11,17 @@ h1 {
   width: 200px;
 }
 
-section#gameboard {
+#scoreboard {
     margin: auto;
     width: 550px;
     height: 200px;
-    /*border-style: dotted;
-    border-color: red;*/
+}
+
+#gameboard {
+    margin: auto;
+    width: 550px;
+    height: 200px;
+    /*float: left;*/
 }
 
 div {
@@ -28,7 +33,30 @@ div {
   float: left;
 }
 
+section#scoreboard div {
+  /*border-style: solid;*/
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  /*border-style: none;*/
+}
+
+.title-scoreboard {
+  border-style: none;
+}
+
+.button {
+
+  /*margin: auto;*/
+  width: 100px;
+  height: 20px;
+}
+
 button {
   float: none;
+  margin: auto;
+  width: 75px;
+  height: 25px;
+  /*text-align: center;*/
   /*display: inline-block;*/
 }
