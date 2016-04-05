@@ -49,12 +49,18 @@ $(document).ready(function() {
     function announceWinner() {
       // I think I will have to turn off the click event
       if(winningMark !== null) {
-        $('div').off('click');
+        $('div').off('click'); // Turn off board so that it cannot receive additional clicks.
         console.log("The winner is the " + winningMark + ".");
         winningMark === 'X' ? score.xWins += 1 : score.oWins += 1;
+        console.log("X score: " + score.xWins);
+        console.log("O score: " + score.oWins);
+        console.log("Draws: " + score.draws);
       } else if(moveCounter === 9) {
         console.log("It was a Draw! No one won!")
         score.draws += 1;
+        console.log("X score: " + score.xWins);
+        console.log("O score: " + score.oWins);
+        console.log("Draws: " + score.draws);
       }
     }
 
@@ -68,9 +74,22 @@ $(document).ready(function() {
           moveCounter += 1;
           checkForWinner();
           announceWinner();
-          console.log('Game counter is now at ' + moveCounter);
+          // console.log('Game counter is now at ' + moveCounter);
         });
     }
 
+    function resetGame() {
+      $('button').on('click', function() {
+          $('div').off('click');
+          $('div').html('');
+          moveCounter = 0;
+          winningMark = null;
+          currentMark = 'X';
+          gameBoard = [ null, null, null, null, null, null, null, null, null ];
+          playGame();
+      });
+    }
+
   playGame();
+  resetGame();
 });

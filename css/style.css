@@ -27,3 +27,8 @@ div {
   text-align: center;
   float: left;
 }
+
+button {
+  float: none;
+  /*display: inline-block;*/
+}
