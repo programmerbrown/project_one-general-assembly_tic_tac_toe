@@ -12,9 +12,9 @@ $(document).ready(function() {
     };
 
     // FUNCTIONS
-
+    // setCurrentMark
     function setCurrentMark () {
-      currentMark = prompt("Type either 'X' or 'O' to determine your mark for Tic-Tac-Toe.");
+      currentMark = prompt("Type either 'X' or 'O' to determine which mark will go first!");
     }
     // toggleMark() switches currentMark from 'X' to 'O' and vice versa as the game progresses
     function toggleMark() {
@@ -47,20 +47,28 @@ $(document).ready(function() {
       }
     }
 
+    // setScoreBoard will write to the score board either (1) when a player wins or
+    // (2) a game results in a draw
+    function setScoreBoard() {
+        $('#x-wins').html(score.xWins);
+        $('#o-wins').html(score.oWins);
+        $('#draws').html(score.draws);
+    }
     // announceWinner for the game if one exists
     // If no winner exists then simply announce a draw/tie
     function announceWinner() {
-      // I think I will have to turn off the click event
       if(winningMark !== null) {
         $('div').off('click'); // Turn off board so that it cannot receive additional clicks.
-        console.log("The winner is the " + winningMark + ".");
+        alert("The winner is the " + winningMark + " player.");
         winningMark === 'X' ? score.xWins += 1 : score.oWins += 1;
+        setScoreBoard();
         console.log("X score: " + score.xWins);
         console.log("O score: " + score.oWins);
         console.log("Draws: " + score.draws);
       } else if(moveCounter === 9) {
-        console.log("It was a Draw! No one won!")
+        alert("It was a Draw! No one won!")
         score.draws += 1;
+        setScoreBoard();
         console.log("X score: " + score.xWins);
         console.log("O score: " + score.oWins);
         console.log("Draws: " + score.draws);
@@ -77,7 +85,6 @@ $(document).ready(function() {
           moveCounter += 1;
           checkForWinner();
           announceWinner();
-          // console.log('Game counter is now at ' + moveCounter);
         });
     }
 
