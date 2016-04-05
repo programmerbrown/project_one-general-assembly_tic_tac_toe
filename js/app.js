@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     var moveCounter = 0;
     var winningMark = null;
-    var currentMark = 'X';
+    var currentMark = null;
     var gameBoard = [ null, null, null, null, null, null, null, null, null ];
     var score = {
       xWins: 0,
@@ -13,6 +13,9 @@ $(document).ready(function() {
 
     // FUNCTIONS
 
+    function setCurrentMark () {
+      currentMark = prompt("Type either 'X' or 'O' to determine your mark for Tic-Tac-Toe.");
+    }
     // toggleMark() switches currentMark from 'X' to 'O' and vice versa as the game progresses
     function toggleMark() {
       if(currentMark === 'X') {
@@ -66,7 +69,7 @@ $(document).ready(function() {
 
     // The playGame() function will actually execute the process of playing the game.
     function playGame() {
-
+        setCurrentMark();
         $('div').one('click', function() {
           $(this).text(currentMark);
           gameBoard[this.id] = currentMark;
