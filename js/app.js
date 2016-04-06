@@ -97,9 +97,7 @@ $(document).ready(function() {
           playGame();
       });
     }
-    // swal("Oops...", "Something went wrong!", "error");
-    // swal({   title: "Error!",   text: "Here's my error message!",   type: "error",   confirmButtonText: "Cool" });
-    // swal({   title: "HTML <small>Title</small>!",   text: "A custom <span style="color:#F8BB86">html<span> message.",   html: true });
-  playGame();
-  resetGame();
+// Actual game execution
+playGame();
+resetGame();
 });
