@@ -16,6 +16,8 @@ $(document).ready(function() {
     function setCurrentMark () {
       currentMark = prompt("Type either 'X' or 'O' to determine which mark will go first!");
     }
+
+
     // toggleMark() switches currentMark from 'X' to 'O' and vice versa as the game progresses
     function toggleMark() {
       if(currentMark === 'X') {
@@ -58,27 +60,21 @@ $(document).ready(function() {
     // If no winner exists then simply announce a draw/tie
     function announceWinner() {
       if(winningMark !== null) {
-        $('div').off('click'); // Turn off board so that it cannot receive additional clicks.
-        alert("The winner is the " + winningMark + " player.");
+        $('div').off('click'); // Turn off board so that it cannot receive additional clicks
         winningMark === 'X' ? score.xWins += 1 : score.oWins += 1;
         setScoreBoard();
-        console.log("X score: " + score.xWins);
-        console.log("O score: " + score.oWins);
-        console.log("Draws: " + score.draws);
+        swal(winningMark + " Won!", "Player " + winningMark + " got 3 in a row!", "success");
       } else if(moveCounter === 9) {
-        alert("It was a Draw! No one won!")
         score.draws += 1;
         setScoreBoard();
-        console.log("X score: " + score.xWins);
-        console.log("O score: " + score.oWins);
-        console.log("Draws: " + score.draws);
+        swal("A Draw!", "No one won. :(", "error");
       }
     }
 
     // The playGame() function will actually execute the process of playing the game.
     function playGame() {
         setCurrentMark();
-        $('div').one('click', function() {
+        $('div.game-squares').one('click', function() {
           $(this).text(currentMark);
           gameBoard[this.id] = currentMark;
           toggleMark();
@@ -88,6 +84,8 @@ $(document).ready(function() {
         });
     }
 
+    // The resetGame function works to clear the board, reset important parameters needed to play the game
+    // restart
     function resetGame() {
       $('button').on('click', function() {
           $('div').off('click');
@@ -99,7 +97,9 @@ $(document).ready(function() {
           playGame();
       });
     }
-
-  // playGame();
-  // resetGame();
+    // swal("Oops...", "Something went wrong!", "error");
+    // swal({   title: "Error!",   text: "Here's my error message!",   type: "error",   confirmButtonText: "Cool" });
+    // swal({   title: "HTML <small>Title</small>!",   text: "A custom <span style="color:#F8BB86">html<span> message.",   html: true });
+  playGame();
+  resetGame();
 });
