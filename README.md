@@ -1,7 +1,7 @@
 #   Tic-Tac-Toe
 #  General Assembly WDI6
-### April 6 2016
-Summary:
+#### April 6 2016
+_Summary:_
 This is my first project at a General Assembly student and foray into building anything as a newbie coder. I found the experience
 to be enjoyable, but also frustrating because (1) we didn't have enough time or (2) my skill level is not high enough to
 execute on my ideas. Here are some  major things I wanted to accomplish but didn't:
@@ -15,26 +15,30 @@ execute on my ideas. Here are some  major things I wanted to accomplish but didn
 
 
 ### Link to Trello Board
-Description:
+_Description:_
 
-Link:
-
+Link
 
 ### Link to Deployed Application
 Description:
 Below is a link to the actual deployed application. Since this application is simply HTML/CSS/JQuery, I utilized GitHub Pages
 to deploy this application.
 
-Link:
+Link
 
 ### Wireframes
 Description:
 
-Link:
+Link
 
 
 ###  Link to Source on GitHub
 Description:
 
-Link:
+Link
+
+### Future Features
+_Description:_
+
+Link
 
