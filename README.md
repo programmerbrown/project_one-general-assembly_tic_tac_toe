@@ -15,24 +15,28 @@ execute on my ideas. Here are some  major things I wanted to accomplish but didn
 
 ### Link to Trello Board
 __Description:__
+This was my first time utilizing Trello. I made lists that represented different states for the user stories/features that
+are reflected by each card. I tried to mimic Kanban boards.
 
-Link
+[Link](https://trello.com/b/fnm8lDTF/tic-tac-toe-project-general-assembly)
 
 ### Link to Deployed Application
 __Description:__
 Below is a link to the actual deployed application. Since this application is simply HTML/CSS/JQuery, I utilized GitHub Pages
 to deploy this application. Click the link below to see my deployed tic-tac-toe game.
 
-Link
+[Link](http://nickthehustler.github.io/tic-tac-toe-game-gen-assembly)
 
 ### Wireframes
 __Description:__
+The tic-tac-toe game was fairly simple and only required a single wireframe to capture the board.
 
 Link
 
 
 ###  Link to Source on GitHub
 __Description:__
+Here is the link to the source on GitHub.
 
 Link
 
