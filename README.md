@@ -31,7 +31,7 @@ to deploy this application. Click the link below to see my deployed tic-tac-toe 
 __Description:__
 The tic-tac-toe game was fairly simple and only required a single wireframe to capture the board.
 
-[Image](https://github.com/nickthehustler/tic-tac-toe-game-gen-assembly/tree/master/images/wireframe.png)
+![Image](https://github.com/nickthehustler/tic-tac-toe-game-gen-assembly/tree/master/images/wireframe.png)
 
 
 ###  Link to Source on GitHub
